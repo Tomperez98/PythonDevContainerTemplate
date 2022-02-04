@@ -1,0 +1,42 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.209.6/containers/python-3
+{
+    "name": "Python 3",
+    "build": {
+        "dockerfile": "dev.Dockerfile",
+        "context": "..",
+    },
+    // Set *default* container specific settings.json values on container create.
+    "settings": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+        "python.linting.flake8Enabled": true,
+        "python.linting.enabled": true,
+        "editor.formatOnSave": true,
+        "python.analysis.diagnosticMode": "workspace",
+        "python.analysis.typeCheckingMode": "basic",
+        "python.formatting.provider": "black",
+        "python.formatting.blackArgs": [
+            "--line-length=79"
+        ],
+        "terminal.integrated.profiles.linux": {
+            "zsh": {
+                "path": "zsh"
+            },
+        },
+        "python.linting.pydocstyleEnabled": false,
+    },
+    // Add the IDs of extensions you want installed when the container is created.
+    "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "njpwerner.autodocstring"
+    ],
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "postCreateCommand": "zsh",
+    // Use 'postCreateCommand' to run commands after the container is created.
+    // "postCreateCommand": "pip3 install --user -r requirements.txt",
+    // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+    // "remoteUser": "vscode"
+}
